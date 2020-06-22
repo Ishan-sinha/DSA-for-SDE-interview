@@ -1,4 +1,4 @@
-# Data Structures and Algorithms for SDC role preparation
+# Data Structures and Algorithms for SDE role preparation
 
 ## Data Structures
 
