@@ -7,18 +7,6 @@
 
 This Library contains different implementations of the tree data structures, such as K-ary, binary, expression trees etc.
 
-## Requirements
-
-The Library requires [Java SE Development Kit 7](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u80-oth-JPR) or higher
-
-## Gradle dependency
-
-```java
-dependencies {
-	compile 'com.scalified:tree:0.2.5'
-}
-```
-
 ## Theory
 
 ### Definition
