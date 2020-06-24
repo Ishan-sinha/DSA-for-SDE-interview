@@ -5,13 +5,13 @@ we always start from the root (head) node. That is, we cannot randomly access a 
 List, Queues, Stacks, etc) which have only one logical way to traverse them, trees can be traversed in different ways. Following are the 
 generally used ways for traversing trees.
 
-##Depth First Traversals:
+## Depth First Traversals:
 
 -(a) Inorder (Left, Root, Right) 
 -(b) Preorder (Root, Left, Right) 
 -(c) Postorder (Left, Right, Root) 
 
-##Breadth First Traversals:
+## Breadth First Traversals:
 
 - Level Order (Left to right in each row)
 - Spiral Order (Alternate direction in alternate rows)
