@@ -7,9 +7,9 @@ generally used ways for traversing trees.
 
 ## Depth First Traversals:
 
--(a) Inorder (Left, Root, Right) 
--(b) Preorder (Root, Left, Right) 
--(c) Postorder (Left, Right, Root) 
+- Inorder (Left, Root, Right) 
+- Preorder (Root, Left, Right) 
+- Postorder (Left, Right, Root) 
 
 ## Breadth First Traversals:
 
