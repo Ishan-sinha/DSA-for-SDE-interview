@@ -52,34 +52,19 @@ public class Main
 		}
 	}
 
-	    static void findNextLargerElement(long a[] , int n)
-	    {
+	    static void findNextLargerElement(long a[] , int n){
 	        Stack<Long> st = new Stack<Long>();
-	        StringBuilder sb = new StringBuilder();
-            st.push(a[n-1]);
-            sb.append(-1+"");
-            for(int i=n-2;i>=0;i++)
+	        HashMap<Long,Long> map = new HashMap<>();
+            for(int i=0;i<n;i++)
             {
-                if(st.isEmpty()==true){
-                    sb.append(-1+" ");
-                }
-                if(a[i]<st.peek() && st.isEmpty()==false){
-                    sb.append(st.peek()+" ");
-                }
-                else if(a[i]>=st.peek() && !st.isEmpty())
-                {
-                    while(a[i]>=st.peek() && !st.isEmpty()){
-                        st.pop();
-                    }
-                    if(st.isEmpty())
-                        sb.append(-1+" ");
-                    else 
-                        sb.append(st.peek());
-                }
+                while(!st.isEmpty()&& a[i] > st.peek()) 
+                    map.put(st.pop() , a[i]) ;
                 st.push(a[i]);
             }
-            
-            
-	        System.out.println(sb.reverse());
+	        for(int i=0;i<n;i++)
+	        {
+	            System.out.print(map.getOrDefault(a[i],(long)-1)+" "); 
+	        }
+	        System.out.println();
         }
 }
