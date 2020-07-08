@@ -32,7 +32,7 @@ Moving through the array we increment counters:
  0	 0	 2	 2	 1	 1
 Next,we simply read off the number of each occurrence: 2 2 3 3 4 5.
 
-# O(n2) algorithms
+# O(n^2) algorithms
 
 ## Bubble Sort
 
@@ -55,13 +55,20 @@ void bubbleSort(int ar[])
 }
 ```
 Example. Here is one step of the algorithm. The largest element - 7 - is bubbled to the top:
+
 7, 5, 2, 4, 3, 9
+
 5, 7, 2, 4, 3, 9
+
 5, 2, 7, 4, 3, 9
+
 5, 2, 4, 7, 3, 9
+
 5, 2, 4, 3, 7, 9
+
 5, 2, 4, 3, 7, 9
-The worst-case runtime complexity is O(n2). See explanation below
+
+The worst-case runtime complexity is O(n^2). See explanation below
  
 
 ## Selection Sort
@@ -83,11 +90,17 @@ void selectionSort(int[] ar){
 }
 ```
 Example.
+
 29, 64, 73, 34, 20,
+
 20, 64, 73, 34, 29,
-20, 29, 73, 34, 64
-20, 29, 34, 73, 64
+
+20, 29, 73, 34, 64,
+
+20, 29, 34, 73, 64,
+
 20, 29, 34, 64, 73
+
 The worst-case runtime complexity is O(n2).
 
 ## Insertion Sort
@@ -109,20 +122,35 @@ void insertionSort(int[] ar)
 }
 ```
 Example. We color a sorted part in green, and an unsorted part in black. Here is an insertion sort step by step. We take an element from unsorted part and compare it with elements in sorted part, moving form right to left.
+
 29, 20, 73, 34, 64
+
 29, 20, 73, 34, 64
+
 20, 29, 73, 34, 64
+
 20, 29, 73, 34, 64
+
 20, 29, 34, 73, 64
+
 20, 29, 34, 64, 73
+
 Let us compute the worst-time complexity of the insertion sort. In sorting the most expensive part is a comparison of two elements. Surely that is a dominant factor in the running time. We will calculate the number of comparisons of an array of N elements:
+
 we need 0 comparisons to insert the first element
+
 we need 1 comparison to insert the second element
+
 we need 2 comparisons to insert the third element
+
 ...
+
 we need (N-1) comparisons (at most) to insert the last element
+
 Totally,
+
 1 + 2 + 3 + ... + (N-1) = O(n2)
+
 The worst-case runtimecomplexity is O(n2).What is the best-case runtime complexity? O(n). The advantage of insertion sort comparing it to the previous two sorting algorithm is that insertion sort runs in linear time on nearly sorted data.
 
 # O(n log n) algorithms
@@ -207,6 +235,7 @@ In this section we discuss four different ways to sort data in Java.
 An array of primitives is sorted by direct invocation of Arrays.sort method
 
 ```
+
 int[] a1 = {3,4,1,5,2,6};
 Arrays.sort(a1);
 ```
@@ -256,9 +285,13 @@ It is important to recognize that if a class implements the Comparable interface
 ## Collection of comparable objects
 
 Mutually comparable objects in a collection are sorted by Collections.sort method:
-```ArrayList‹Integer> a2 = new ArrayList‹Integer> (5);
+
+```
+
+ArrayList‹Integer> a2 = new ArrayList‹Integer> (5);
 ...
-Collections.sort(a2); 
+Collections.sort(a2);
+
 ```
 ## Comparator
 
