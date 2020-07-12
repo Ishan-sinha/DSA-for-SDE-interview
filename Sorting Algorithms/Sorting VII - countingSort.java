@@ -1,7 +1,6 @@
 /*
 Counting Sort 
 
-
 Given a string S consisting of lowercase latin letters, arrange all its letters in lexographical order using Counting Sort.
 
 Input:
@@ -14,12 +13,10 @@ Your Task:
 This is a function problem. You only need to complete the function countSort() that takes char array as parameter and return the sorted char array. The printing is done by driver code.
 
 Expected Time Complexity: O(N).
-Expected Auxiliary Space: O(N).
+Expected Auxiliary Space: O(N). */
 
-Constraints:
-1 <= T <= 105
-1 <= N <= 105 */
-
+import java.util.*;
+import java.lang.*;
 
 class CountSort
 {
@@ -39,28 +36,33 @@ class CountSort
         }
     }
 }
+// } Driver Code Ends
 
 
 class GfG
 {
     
+    // Function to do count sort
+    // seq[]: input array
+    // return the sorted input array of character
     public static char[] countSort(char seq[])
     {
         // add your code here 
-        int t[] = new int[26];
-        Arrays.fill(t,0);
-        for(int i=0;i<seq.length;i++){
-            t[seq[i]-97]++;
-        }
-        char p = 'a';
-        String q="";
-        for(int i=0;i<26;i++){
-            for(int j=0;j<t[i];j++){
-                q += p;
+        TreeMap<Character, Integer> sorted = new TreeMap<>();
+        for (int i = 0; i < seq.length; i++) {
+            if (sorted.containsKey(seq[i])) {
+                sorted.put(seq[i], sorted.get(seq[i]) + 1);
+            } 
+            else {
+                sorted.put(seq[i], 1);
             }
-            ++p;
         }
-        char c[] = q.toCharArray();
-        return c;
+        int x = 0;
+        for (Character s : sorted.keySet()) {
+            for (int z = 1; z <= sorted.get(s); z++) {
+                seq[x++] = s;
+            }
+        }
+        return seq;
     }
 }
